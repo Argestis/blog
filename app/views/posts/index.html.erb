@@ -1,0 +1,74 @@
+<!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url(/assets/header-background.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>RoR Blog</h1>
+                        <hr class="small">
+                        <span class="subheading">Learning Ruby on Rails</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+<!-- Main Content -->
+ <%= @post.find_each do |post| %>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-preview">
+                    <a href="post.html">
+                        <h2 class="post-title">
+                          <%= link_to post_path(post) do %>    
+                            <%= post.title %>
+                          <% end %>
+                        </h2>
+                        <h3 class="post-subtitle">
+                            <%= post.content %>
+                        </h3>
+                    </a>
+                    <p class="post-meta">Posted by <a href="#"> Alexandro Pequeno </a><%= post.created_at.strftime("%b %d, %Y")%></p>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+  <% end %>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; Alexadro Pequeno 2016</p>
+                </div>
+            </div>
+        </div>
+    </footer>
